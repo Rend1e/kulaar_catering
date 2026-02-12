@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Кулаар Кейтеринг</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; line-height: 1.4; }
+
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+    }
+
+    nav .logo { font-weight: bold; font-size: 18px; }
+
+    nav ul {
+      display: flex;
+      gap: 16px;
+      list-style: none;
+    }
+
+    nav a, nav button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      color: #000;
+      font-size: 14px;
+    }
+
+    main { padding-top: 70px; }
+
+    section {
+      min-height: 100vh;
+      padding: 60px 20px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    section:nth-child(even) { background: #f9f9f9; }
+
+    h2 { margin-bottom: 20px; }
+
+    .placeholder {
+      width: 100%;
+      height: 300px;
+      background: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      margin-top: 20px;
+    }
+
+    /* Модалка корзины */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+    }
+
+    .modal.active { display: flex; }
+
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 8px;
+    }
+
+    .modal-content h3 { margin-bottom: 10px; }
+
+    .close {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav ul { flex-wrap: wrap; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">Кулаар Кейтеринг</div>
+    <ul>
+      <li><a href="#menu">Меню</a></li>
+      <li><a href="#sales">Акции</a></li>
+      <li><a href="#delivery">Доставка</a></li>
+      <li><a href="#about">О нас</a></li>
+      <li><a href="profile.html">Профиль</a></li>
+      <li><button id="openCart">Корзина</button></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section id="menu">
+    <h2>Меню</h2>
+    <p>Наши блюда. Здесь будет каталог.</p>
+    <div class="placeholder">Фото блюд</div>
+  </section>
+
+  <section id="sales">
+    <h2>Акции</h2>
+    <p>Специальные предложения и скидки.</p>
+    <div class="placeholder">Баннеры акций</div>
+  </section>
+
+  <section id="delivery">
+    <h2>Условия доставки</h2>
+    <p>Информация о доставке, времени и стоимости.</p>
+    <div class="placeholder">Инфографика</div>
+  </section>
+
+  <section id="about">
+    <h2>О нас</h2>
+    <p>Кулаар Кейтеринг — доставка вкусных блюд.</p>
+    <div class="placeholder">Фото команды</div>
+  </section>
+</main>
+
+<!-- Корзина -->
+<div class="modal" id="cartModal">
+  <div class="modal-content">
+    <h3>Корзина</h3>
+    <p>Товары будут здесь</p>
+    <button class="close" id="closeCart">Закрыть</button>
+  </div>
+</div>
+
+<script>
+  // Плавный скролл
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector(link.getAttribute('href'))
+        .scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Анимация появления блоков
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('section').forEach(sec => observer.observe(sec));
+
+  // Корзина
+  const cartModal = document.getElementById('cartModal');
+  document.getElementById('openCart').onclick = () => cartModal.classList.add('active');
+  document.getElementById('closeCart').onclick = () => cartModal.classList.remove('active');
+</script>
+
+</body>
+</html>
