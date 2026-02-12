@@ -48,7 +48,13 @@
       opacity: 0;
       transform: translateY(40px);
       transition: all 0.8s ease;
-      scroll-margin-top: 80px; /* фикс смещения из-за хедера */
+      scroll-margin-top: 80px; /* десктоп */
+    }
+
+    @media (max-width: 768px) {
+      section {
+        scroll-margin-top: 110px; /* мобильный фикс: ниже навигации */
+      }
     }
 
     section.visible {
@@ -166,7 +172,6 @@
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
-
 
   // Анимация появления блоков
   const observer = new IntersectionObserver(entries => {
