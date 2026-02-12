@@ -48,6 +48,7 @@
       opacity: 0;
       transform: translateY(40px);
       transition: all 0.8s ease;
+      scroll-margin-top: 80px; /* фикс смещения из-за хедера */
     }
 
     section.visible {
@@ -157,12 +158,20 @@
 </div>
 
 <script>
-  // Плавный скролл
+  // Плавный скролл с учётом фиксированного хедера
+  const headerOffset = document.querySelector('header').offsetHeight;
+
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
-      document.querySelector(link.getAttribute('href'))
-        .scrollIntoView({ behavior: 'smooth' });
+      const target = document.querySelector(link.getAttribute('href'));
+      const elementPosition = target.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset + 5;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     });
   });
 
