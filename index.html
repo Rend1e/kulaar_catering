@@ -48,13 +48,7 @@
       opacity: 0;
       transform: translateY(40px);
       transition: all 0.8s ease;
-      scroll-margin-top: 80px; /* десктоп */
-    }
-
-    @media (max-width: 768px) {
-      section {
-        scroll-margin-top: 110px; /* мобильный фикс: ниже навигации */
-      }
+      scroll-margin-top: 80px; /* фикс смещения из-за хедера */
     }
 
     section.visible {
@@ -165,11 +159,23 @@
 
 <script>
   // Плавный скролл — браузерный, без смещения JS
+  // Плавный скролл БЕЗ перелётов (учёт реальной высоты навигации)
+  const header = document.querySelector('header');
+
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
+
       const target = document.querySelector(link.getAttribute('href'));
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const headerHeight = header.getBoundingClientRect().height;
+
+      const targetTop = target.getBoundingClientRect().top + window.pageYOffset;
+      const scrollToPosition = targetTop - headerHeight - 10; // гарантированный отступ
+
+      window.scrollTo({
+        top: scrollToPosition,
+        behavior: 'smooth'
+      });
     });
   });
 
