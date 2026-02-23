@@ -2,225 +2,248 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Кулаар Кейтеринг</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+  <title>Кулар Кейтеринг - Фуршет-боксы 2026</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
 <header>
   <nav>
-    <div class="logo">Кулаар Кейтеринг</div>
+    <div class="logo">🍱 Кулар Кейтеринг</div>
     <ul>
-      <li><a href="#foodboxes">Футбоксы</a></li>
-      <li><a href="#snacks">Снек бар</a></li>
+      <li><a href="#foodboxes">Фудбоксы</a></li>
+      <li><a href="#snacks">Снек-бар</a></li>
       <li><a href="#salads">Салаты</a></li>
       <li><a href="#hot">Горячее</a></li>
       <li><a href="#bakery">Выпечка</a></li>
       <li><a href="#cuts">Нарезки</a></li>
       <li><a href="#desserts">Десерты</a></li>
-      <li><button id="openCart">Корзина</button></li>
+      <li><button id="openCart">🛒 Корзина</button></li>
     </ul>
   </nav>
 </header>
 
 <main>
-  <section id="menu">
-    <h2>Полный каталог</h2>
-    <p>Сезон весна 2026</p>
-
-    <div class="menu-categories">
-      <a href="#foodboxes">ФУТБОКСЫ</a>
-      <a href="#snacks">СНЕК БАР</a>
-      <a href="#salads">САЛАТЫ</a>
-      <a href="#hot">ГОРЯЧИЕ БЛЮДА</a>
-      <a href="#bakery">ВЫПЕЧКА</a>
-      <a href="#cuts">НАРЕЗКИ</a>
-      <a href="#desserts">ДЕСЕРТЫ</a>
+  <section id="catalog">
+    <!-- ===== ОГЛАВЛЕНИЕ ===== -->
+    <div class="table-of-contents">
+      <h1 class="toc-title">Фуршет-боксы 2026</h1>
+      <p class="toc-subtitle">Готовые гастрономические решения, наборы закусок на компанию. Сезон весна 2026.</p>
+      
+      <div class="toc-grid">
+        <a href="#foodboxes" class="toc-item featured">
+          <div class="toc-item-header">
+            <div class="toc-icon">🍱</div>
+            <h3>ФУДБОКСЫ</h3>
+          </div>
+          <p>Готовые наборы закусок на компанию</p>
+          <span class="toc-badge">12 вариантов</span>
+        </a>
+        <a href="#snacks" class="toc-item">
+          <div class="toc-item-header">
+            <div class="toc-icon">🥨</div>
+            <h3>СНЕК-БАР</h3>
+          </div>
+          <p>Закуски, брускетты, мини-бургеры</p>
+          <span class="toc-badge">30+ позиций</span>
+        </a>
+        <a href="#salads" class="toc-item">
+          <div class="toc-item-header">
+            <div class="toc-icon">🥗</div>
+            <h3>САЛАТЫ</h3>
+          </div>
+          <p>Классические и авторские</p>
+          <span class="toc-badge">13 видов</span>
+        </a>
+        <a href="#hot" class="toc-item">
+          <div class="toc-item-header">
+            <div class="toc-icon">🍖</div>
+            <h3>ГОРЯЧЕЕ</h3>
+          </div>
+          <p>Шашлычки, киши, люля-кебаб</p>
+          <span class="toc-badge">6 позиций</span>
+        </a>
+        <a href="#bakery" class="toc-item">
+          <div class="toc-item-header">
+            <div class="toc-icon">🥖</div>
+            <h3>ВЫПЕЧКА</h3>
+          </div>
+          <p>Якутские лепешки, пирожки</p>
+          <span class="toc-badge">4 вида</span>
+        </a>
+        <a href="#cuts" class="toc-item">
+          <div class="toc-item-header">
+            <div class="toc-icon">🥩</div>
+            <h3>НАРЕЗКИ</h3>
+          </div>
+          <p>Мясные, рыбные, овощные</p>
+          <span class="toc-badge">4 набора</span>
+        </a>
+        <a href="#desserts" class="toc-item">
+          <div class="toc-item-header">
+            <div class="toc-icon">🍰</div>
+            <h3>ДЕСЕРТЫ</h3>
+          </div>
+          <p>Пирожные, капкейки, кейк-попы</p>
+          <span class="toc-badge">15 видов</span>
+        </a>
+      </div>
+      
+      <div class="toc-footer">
+        <span>📞 700274 • 89142700274</span>
+        <span>✅ Самовывоз -5%</span>
+        <span>🚚 Доставка от 5000₽</span>
+      </div>
     </div>
 
-    <!-- ФУТБОКСЫ -->
+    <!-- ===== ФУДБОКСЫ ===== -->
     <div class="menu-block" id="foodboxes">
-      <h3>Фуршет-боксы</h3>
+      <h3>🍱 Фудбоксы — готовые наборы</h3>
       <div class="scroll-controls">
         <button class="scroll-btn" onclick="scrollCategory('foodboxesScroll', -320)">←</button>
         <button class="scroll-btn" onclick="scrollCategory('foodboxesScroll', 320)">→</button>
       </div>
       <div class="horizontal-scroll" id="foodboxesScroll">
-        <!-- ФУДБОКС №1 -->
+        <!-- Фудбокс 1 -->
         <div class="product-card">
-          <div class="product-image">🍱</div>
+          <div class="product-image"><img src="img/foodbox-1.jpg" alt="Фудбокс №1" loading="lazy"></div>
           <span class="category-badge">Закуски • 19 шт</span>
           <div class="product-title">Фудбокс №1</div>
           <div class="product-weight">900 г / 2350 ₽</div>
-          <div class="product-description">
-            Маффины с сыром и беконом • Эклеры с паштетом • Брускетты со шпротами, сёмгой и перцем
-          </div>
+          <div class="product-description">Маффины с беконом • Эклеры с паштетом • Брускетты</div>
           <div class="product-footer">
             <span class="product-price">2350 ₽</span>
             <button class="add-to-cart">В корзину</button>
           </div>
         </div>
-
-        <!-- ФУДБОКС №2 -->
+        <!-- Фудбокс 2 -->
         <div class="product-card">
-          <div class="product-image">🍰</div>
-          <span class="category-badge">Несладкие пирожные • 15 шт</span>
+          <div class="product-image"><img src="img/foodbox-2.jpg" alt="Фудбокс №2" loading="lazy"></div>
+          <span class="category-badge">Несладкие • 15 шт</span>
           <div class="product-title">Фудбокс №2</div>
           <div class="product-weight">450 г / 2600 ₽</div>
-          <div class="product-description">
-            Пирожные свекольные с сельдью • Из шпината с сёмгой • Краб & морковка
-          </div>
+          <div class="product-description">Свекольные • Шпинат с сёмгой • Краб & морковка</div>
           <div class="product-footer">
             <span class="product-price">2600 ₽</span>
             <button class="add-to-cart">В корзину</button>
           </div>
         </div>
-
-        <!-- ФУДБОКС №3 -->
+        <!-- Фудбокс 3 -->
         <div class="product-card">
-          <div class="product-image">🥙</div>
+          <div class="product-image"><img src="img/foodbox-3.jpg" alt="Фудбокс №3" loading="lazy"></div>
           <span class="category-badge">Рулеты • 16 шт</span>
           <div class="product-title">Фудбокс №3</div>
           <div class="product-weight">600 г / 2700 ₽</div>
-          <div class="product-description">
-            Рулет из кабачков • Из баклажанов • Из крабовых палочек • Профитроль с перцем
-          </div>
+          <div class="product-description">Кабачки • Баклажаны • Краб • Профитроль с перцем</div>
           <div class="product-footer">
             <span class="product-price">2700 ₽</span>
             <button class="add-to-cart">В корзину</button>
           </div>
         </div>
-
-        <!-- ФУДБОКС №4 -->
+        <!-- Фудбокс 4 -->
         <div class="product-card">
-          <div class="product-image">🥧</div>
+          <div class="product-image"><img src="img/foodbox-4.jpg" alt="Фудбокс №4" loading="lazy"></div>
           <span class="category-badge">Микс паштетов • 19 шт</span>
           <div class="product-title">Фудбокс №4</div>
           <div class="product-weight">450 г / 2700 ₽</div>
-          <div class="product-description">
-            Волован с пате • Рулет из шпината с сёмгой • Краб & морковка
-          </div>
+          <div class="product-description">Волованы • Рулеты с сёмгой • Краб & морковка</div>
           <div class="product-footer">
             <span class="product-price">2700 ₽</span>
             <button class="add-to-cart">В корзину</button>
           </div>
         </div>
-
-        <!-- ФУДБОКС №5 -->
+        <!-- Фудбокс 5 -->
         <div class="product-card">
-          <div class="product-image">🍔</div>
+          <div class="product-image"><img src="img/foodbox-5.jpg" alt="Фудбокс №5" loading="lazy"></div>
           <span class="category-badge">Большой • 23 шт</span>
           <div class="product-title">Фудбокс №5</div>
           <div class="product-weight">850 г / 3150 ₽</div>
-          <div class="product-description">
-            Мини бургеры • Киш • Канапе-слойки • Брускетта с паштетом
-          </div>
+          <div class="product-description">Мини-бургеры • Киш • Канапе-слойки</div>
           <div class="product-footer">
             <span class="product-price">3150 ₽</span>
             <button class="add-to-cart">В корзину</button>
           </div>
         </div>
-
-        <!-- ФУДБОКС №6 -->
+        <!-- Фудбокс 6 -->
         <div class="product-card">
-          <div class="product-image">🥗</div>
+          <div class="product-image"><img src="img/foodbox-6.jpg" alt="Фудбокс №6" loading="lazy"></div>
           <span class="category-badge">Салаты • 16 шт</span>
           <div class="product-title">Фудбокс №6</div>
           <div class="product-weight">600 г / 2300 ₽</div>
-          <div class="product-description">
-            Тарталетки с крабовым • С курицей • Цезарь • Корзинка с икрой
-          </div>
+          <div class="product-description">Тарталетки: крабовый, Цезарь, с курицей</div>
           <div class="product-footer">
             <span class="product-price">2300 ₽</span>
             <button class="add-to-cart">В корзину</button>
           </div>
         </div>
-
-        <!-- РЫБНЫЙ БОКС -->
+        <!-- Рыбный бокс -->
         <div class="product-card">
-          <div class="product-image">🐟</div>
+          <div class="product-image"><img src="img/fish-box.jpg" alt="Рыбный бокс" loading="lazy"></div>
           <span class="category-badge">Рыбный набор</span>
           <div class="product-title">Рыбный бокс</div>
           <div class="product-weight">660 г / 3600 ₽</div>
-          <div class="product-description">
-            Заливное из чира • Сёмга • Чир • Тарталетка с икрой
-          </div>
+          <div class="product-description">Заливное из чира • Сёмга • Чир • Икра</div>
           <div class="product-footer">
             <span class="product-price">3600 ₽</span>
             <button class="add-to-cart">В корзину</button>
           </div>
         </div>
-
-        <!-- МЯСНОЙ БОКС -->
+        <!-- Мясной бокс -->
         <div class="product-card">
-          <div class="product-image">🥩</div>
+          <div class="product-image"><img src="img/meat-box.jpg" alt="Мясной бокс" loading="lazy"></div>
           <span class="category-badge">Мясной набор</span>
           <div class="product-title">Мясной бокс</div>
           <div class="product-weight">560 г / 1900 ₽</div>
-          <div class="product-description">
-            Киш • Оленина • Жеребятина • Свинина • Овощи гриль
-          </div>
+          <div class="product-description">Оленина • Жеребятина • Свинина • Овощи гриль</div>
           <div class="product-footer">
             <span class="product-price">1900 ₽</span>
             <button class="add-to-cart">В корзину</button>
           </div>
         </div>
-
-        <!-- ДЕСЕРТНЫЙ БОКС -->
+        <!-- Десертный бокс -->
         <div class="product-card">
-          <div class="product-image">🍰</div>
+          <div class="product-image"><img src="img/dessert-box.jpg" alt="Десертный бокс" loading="lazy"></div>
           <span class="category-badge">Десерты • 16 шт</span>
           <div class="product-title">Десертный бокс</div>
           <div class="product-weight">500 г / 2300 ₽</div>
-          <div class="product-description">
-            Фисташковая меренга • Брауни • Морковное • Профитроли
-          </div>
+          <div class="product-description">Меренга • Брауни • Морковное • Профитроли</div>
           <div class="product-footer">
             <span class="product-price">2300 ₽</span>
             <button class="add-to-cart">В корзину</button>
           </div>
         </div>
-
-        <!-- ТАПТАЛ-МАХТАЛ -->
+        <!-- Таптал-Махтал -->
         <div class="product-card">
-          <div class="product-image"><img src="img/taptal-mahtal.jpg" alt=""></div>
+          <div class="product-image"><img src="img/taptal-mahtal.jpg" alt="Таптал-Махтал" loading="lazy"></div>
           <span class="category-badge">Подарочный • 12 шт</span>
           <div class="product-title">Таптал-Махтал</div>
           <div class="product-weight">600 г / 2400 ₽</div>
-          <div class="product-description">
-            Перечный рулет • Маффин с тунцом • Кейк попы
-          </div>
+          <div class="product-description">Перечный рулет • Маффин с тунцом • Кейк-попы</div>
           <div class="product-footer">
             <span class="product-price">2400 ₽</span>
             <button class="add-to-cart">В корзину</button>
           </div>
         </div>
-
-        <!-- НАБОР ШОКОЛАДНЫХ -->
+        <!-- Шоколадный набор -->
         <div class="product-card">
-          <div class="product-image">🍫</div>
+          <div class="product-image"><img src="img/chocolate-box.jpg" alt="Набор шоколадных" loading="lazy"></div>
           <span class="category-badge">Шоколадные • 12 шт</span>
           <div class="product-title">Набор шоколадных</div>
           <div class="product-weight">650 г / 2200 ₽</div>
-          <div class="product-description">
-            Кейк поп брауни • Манговый • Малиновый • Фисташковый
-          </div>
+          <div class="product-description">Кейк-попы: брауни, манговый, малиновый, фисташковый</div>
           <div class="product-footer">
             <span class="product-price">2200 ₽</span>
             <button class="add-to-cart">В корзину</button>
           </div>
         </div>
-
-        <!-- НАБОР АЛГЫС -->
+        <!-- Набор Алгыс -->
         <div class="product-card">
-          <div class="product-image">🥞</div>
+          <div class="product-image"><img src="img/algys-box.jpg" alt="Набор Алгыс" loading="lazy"></div>
           <span class="category-badge">Якутская кухня</span>
           <div class="product-title">Набор Алгыс</div>
           <div class="product-weight">500 г + 15 оладий / 900 ₽</div>
-          <div class="product-description">
-            Оладьи якутские (15 шт) • Саламат
-          </div>
+          <div class="product-description">Оладьи якутские (15 шт) • Саламат</div>
           <div class="product-footer">
             <span class="product-price">900 ₽</span>
             <button class="add-to-cart">В корзину</button>
@@ -229,817 +252,163 @@
       </div>
     </div>
 
-    <!-- СНЕК БАР / ЗАКУСКИ -->
+    <!-- ===== СНЕК-БАР / ЗАКУСКИ ===== -->
     <div class="menu-block" id="snacks">
-      <h3>Снек бар / Закуски</h3>
+      <h3>🥨 Снек-бар / Закуски</h3>
       <div class="scroll-controls">
         <button class="scroll-btn" onclick="scrollCategory('snacksScroll', -320)">←</button>
         <button class="scroll-btn" onclick="scrollCategory('snacksScroll', 320)">→</button>
       </div>
       <div class="horizontal-scroll" id="snacksScroll">
-        <div class="product-card">
-          <div class="product-image">🥧</div>
-          <div class="product-title">Волован с морковным пате</div>
-          <div class="product-weight">30 г</div>
-          <div class="product-footer">
-            <span class="product-price">110 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥧</div>
-          <div class="product-title">Волован с рыбным пате</div>
-          <div class="product-weight">30 г</div>
-          <div class="product-footer">
-            <span class="product-price">150 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🧁</div>
-          <div class="product-title">Сырный маффин с беконом</div>
-          <div class="product-weight">80 г</div>
-          <div class="product-footer">
-            <span class="product-price">140 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🍮</div>
-          <div class="product-title">Заливное из чира/муксуна</div>
-          <div class="product-weight">65 г</div>
-          <div class="product-footer">
-            <span class="product-price">200 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🦀</div>
-          <div class="product-title">Пирожное краб & морковка</div>
-          <div class="product-weight">35 г</div>
-          <div class="product-footer">
-            <span class="product-price">170 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🦀</div>
-          <div class="product-title">Рулет краб & морковка</div>
-          <div class="product-weight">20 г</div>
-          <div class="product-footer">
-            <span class="product-price">100 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🍣</div>
-          <div class="product-title">Пирожное из шпината с сёмгой</div>
-          <div class="product-weight">35 г</div>
-          <div class="product-footer">
-            <span class="product-price">220 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🍣</div>
-          <div class="product-title">Рулет из шпината с сёмгой</div>
-          <div class="product-weight">20 г</div>
-          <div class="product-footer">
-            <span class="product-price">135 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🍠</div>
-          <div class="product-title">Пирожное свекольное с сельдью</div>
-          <div class="product-weight">35 г</div>
-          <div class="product-footer">
-            <span class="product-price">150 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🍠</div>
-          <div class="product-title">Рулет свекольный с сельдью</div>
-          <div class="product-weight">20 г</div>
-          <div class="product-footer">
-            <span class="product-price">100 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥒</div>
-          <div class="product-title">Рулет из фаршированных кабачков</div>
-          <div class="product-weight">30 г</div>
-          <div class="product-footer">
-            <span class="product-price">185 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🍆</div>
-          <div class="product-title">Рулет из фаршированных баклажанов</div>
-          <div class="product-weight">30 г</div>
-          <div class="product-footer">
-            <span class="product-price">180 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🦀</div>
-          <div class="product-title">Рулет из крабовых палочек</div>
-          <div class="product-weight">45 г</div>
-          <div class="product-footer">
-            <span class="product-price">90 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🍚</div>
-          <div class="product-title">Рисовые крабовые шарики в тарталетке</div>
-          <div class="product-weight">35 г</div>
-          <div class="product-footer">
-            <span class="product-price">125 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥟</div>
-          <div class="product-title">Профитроль с рулетом из запеченного перца</div>
-          <div class="product-weight">45 г</div>
-          <div class="product-footer">
-            <span class="product-price">185 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥖</div>
-          <div class="product-title">Фиш брускетта с сёмгой</div>
-          <div class="product-weight">45 г</div>
-          <div class="product-footer">
-            <span class="product-price">180 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥖</div>
-          <div class="product-title">Фиш брускетта со шпротами</div>
-          <div class="product-weight">40 г</div>
-          <div class="product-footer">
-            <span class="product-price">150 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥖</div>
-          <div class="product-title">Фиш брускетта с чиром</div>
-          <div class="product-weight">40 г</div>
-          <div class="product-footer">
-            <span class="product-price">100 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥖</div>
-          <div class="product-title">Брускетта с запеченным перцем</div>
-          <div class="product-weight">40 г</div>
-          <div class="product-footer">
-            <span class="product-price">90 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🍞</div>
-          <div class="product-title">Брускетта на черном хлебе со свекольным паштетом</div>
-          <div class="product-weight">45 г</div>
-          <div class="product-footer">
-            <span class="product-price">120 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥐</div>
-          <div class="product-title">Эклер с морковным пате и курицей</div>
-          <div class="product-weight">40 г</div>
-          <div class="product-footer">
-            <span class="product-price">160 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥐</div>
-          <div class="product-title">Эклер с семгой</div>
-          <div class="product-weight">40 г</div>
-          <div class="product-footer">
-            <span class="product-price">180 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥪</div>
-          <div class="product-title">Канапе-слойка с сервелатом</div>
-          <div class="product-weight">60 г</div>
-          <div class="product-footer">
-            <span class="product-price">125 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥪</div>
-          <div class="product-title">Канапе-слойка с семгой</div>
-          <div class="product-weight">60 г</div>
-          <div class="product-footer">
-            <span class="product-price">200 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🍔</div>
-          <div class="product-title">Мини чиккен бургер</div>
-          <div class="product-weight">50 г</div>
-          <div class="product-footer">
-            <span class="product-price">150 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🍔</div>
-          <div class="product-title">Мини биф бургер</div>
-          <div class="product-weight">50 г</div>
-          <div class="product-footer">
-            <span class="product-price">150 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥕</div>
-          <div class="product-title">Соленая роза из моркови</div>
-          <div class="product-weight">70 г</div>
-          <div class="product-footer">
-            <span class="product-price">130 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥒</div>
-          <div class="product-title">Соленая роза из кабачков</div>
-          <div class="product-weight">70 г</div>
-          <div class="product-footer">
-            <span class="product-price">150 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🧁</div>
-          <div class="product-title">Зелёный маффин из шпината с тунцом</div>
-          <div class="product-weight">50 г</div>
-          <div class="product-footer">
-            <span class="product-price">180 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🌶️</div>
-          <div class="product-title">Рулет перечный с курицей</div>
-          <div class="product-weight">40 г</div>
-          <div class="product-footer">
-            <span class="product-price">190 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
+        <!-- 30+ карточек закусок -->
+        <div class="product-card"><div class="product-image">🥧</div><div class="product-title">Волован с морковным пате</div><div class="product-weight">30 г</div><div class="product-footer"><span class="product-price">110 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥧</div><div class="product-title">Волован с рыбным пате</div><div class="product-weight">30 г</div><div class="product-footer"><span class="product-price">150 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🧁</div><div class="product-title">Сырный маффин с беконом</div><div class="product-weight">80 г</div><div class="product-footer"><span class="product-price">140 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🍮</div><div class="product-title">Заливное из чира/муксуна</div><div class="product-weight">65 г</div><div class="product-footer"><span class="product-price">200 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🦀</div><div class="product-title">Пирожное краб & морковка</div><div class="product-weight">35 г</div><div class="product-footer"><span class="product-price">170 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🦀</div><div class="product-title">Рулет краб & морковка</div><div class="product-weight">20 г</div><div class="product-footer"><span class="product-price">100 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🍣</div><div class="product-title">Пирожное из шпината с сёмгой</div><div class="product-weight">35 г</div><div class="product-footer"><span class="product-price">220 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🍣</div><div class="product-title">Рулет из шпината с сёмгой</div><div class="product-weight">20 г</div><div class="product-footer"><span class="product-price">135 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🍠</div><div class="product-title">Пирожное свекольное с сельдью</div><div class="product-weight">35 г</div><div class="product-footer"><span class="product-price">150 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🍠</div><div class="product-title">Рулет свекольный с сельдью</div><div class="product-weight">20 г</div><div class="product-footer"><span class="product-price">100 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥒</div><div class="product-title">Рулет из кабачков</div><div class="product-weight">30 г</div><div class="product-footer"><span class="product-price">185 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🍆</div><div class="product-title">Рулет из баклажанов</div><div class="product-weight">30 г</div><div class="product-footer"><span class="product-price">180 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🦀</div><div class="product-title">Рулет из крабовых палочек</div><div class="product-weight">45 г</div><div class="product-footer"><span class="product-price">90 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🍚</div><div class="product-title">Крабовые шарики в тарталетке</div><div class="product-weight">35 г</div><div class="product-footer"><span class="product-price">125 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥟</div><div class="product-title">Профитроль с перцем</div><div class="product-weight">45 г</div><div class="product-footer"><span class="product-price">185 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥖</div><div class="product-title">Фиш брускетта с сёмгой</div><div class="product-weight">45 г</div><div class="product-footer"><span class="product-price">180 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥖</div><div class="product-title">Фиш брускетта со шпротами</div><div class="product-weight">40 г</div><div class="product-footer"><span class="product-price">150 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥖</div><div class="product-title">Фиш брускетта с чиром</div><div class="product-weight">40 г</div><div class="product-footer"><span class="product-price">100 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥖</div><div class="product-title">Брускетта с перцем</div><div class="product-weight">40 г</div><div class="product-footer"><span class="product-price">90 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🍞</div><div class="product-title">Брускетта на черном хлебе</div><div class="product-weight">45 г</div><div class="product-footer"><span class="product-price">120 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥐</div><div class="product-title">Эклер с пате и курицей</div><div class="product-weight">40 г</div><div class="product-footer"><span class="product-price">160 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥐</div><div class="product-title">Эклер с сёмгой</div><div class="product-weight">40 г</div><div class="product-footer"><span class="product-price">180 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥪</div><div class="product-title">Канапе-слойка с сервелатом</div><div class="product-weight">60 г</div><div class="product-footer"><span class="product-price">125 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥪</div><div class="product-title">Канапе-слойка с сёмгой</div><div class="product-weight">60 г</div><div class="product-footer"><span class="product-price">200 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🍔</div><div class="product-title">Мини чиккен бургер</div><div class="product-weight">50 г</div><div class="product-footer"><span class="product-price">150 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🍔</div><div class="product-title">Мини биф бургер</div><div class="product-weight">50 г</div><div class="product-footer"><span class="product-price">150 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥕</div><div class="product-title">Соленая роза из моркови</div><div class="product-weight">70 г</div><div class="product-footer"><span class="product-price">130 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥒</div><div class="product-title">Соленая роза из кабачков</div><div class="product-weight">70 г</div><div class="product-footer"><span class="product-price">150 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🧁</div><div class="product-title">Зелёный маффин с тунцом</div><div class="product-weight">50 г</div><div class="product-footer"><span class="product-price">180 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🌶️</div><div class="product-title">Рулет перечный с курицей</div><div class="product-weight">40 г</div><div class="product-footer"><span class="product-price">190 ₽</span><button class="add-to-cart">В корзину</button></div></div>
       </div>
     </div>
 
-    <!-- САЛАТЫ -->
+    <!-- ===== САЛАТЫ ===== -->
     <div class="menu-block" id="salads">
-      <h3>Салаты</h3>
+      <h3>🥗 Салаты</h3>
       <div class="scroll-controls">
         <button class="scroll-btn" onclick="scrollCategory('saladsScroll', -320)">←</button>
         <button class="scroll-btn" onclick="scrollCategory('saladsScroll', 320)">→</button>
       </div>
       <div class="horizontal-scroll" id="saladsScroll">
-        <div class="product-card">
-          <div class="product-image">🥗</div>
-          <div class="product-title">Тарталетка с крабовым салатом</div>
-          <div class="product-weight">35 г</div>
-          <div class="product-footer">
-            <span class="product-price">135 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥗</div>
-          <div class="product-title">Тарталетка с салатом «Нежность»</div>
-          <div class="product-weight">35 г</div>
-          <div class="product-footer">
-            <span class="product-price">120 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥗</div>
-          <div class="product-title">Тарталетка с салатом с курицей и овощами</div>
-          <div class="product-weight">35 г</div>
-          <div class="product-footer">
-            <span class="product-price">120 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥗</div>
-          <div class="product-title">Тарталетка с салатом «Анабарочка»</div>
-          <div class="product-weight">35 г</div>
-          <div class="product-footer">
-            <span class="product-price">110 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥗</div>
-          <div class="product-title">Тарталетка с салатом «Цезарь»</div>
-          <div class="product-weight">35 г</div>
-          <div class="product-footer">
-            <span class="product-price">135 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥗</div>
-          <div class="product-title">Салат «Нежность»</div>
-          <div class="product-weight">100 г</div>
-          <div class="product-footer">
-            <span class="product-price">360 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥗</div>
-          <div class="product-title">Салат «Цезарь»</div>
-          <div class="product-weight">100 г</div>
-          <div class="product-footer">
-            <span class="product-price">370 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥗</div>
-          <div class="product-title">Салат «Римский»</div>
-          <div class="product-weight">100 г</div>
-          <div class="product-footer">
-            <span class="product-price">220 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥗</div>
-          <div class="product-title">Салат «Анабарочка»</div>
-          <div class="product-weight">100 г</div>
-          <div class="product-footer">
-            <span class="product-price">250 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥗</div>
-          <div class="product-title">Салат «Крабовая классика»</div>
-          <div class="product-weight">100 г</div>
-          <div class="product-footer">
-            <span class="product-price">180 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥗</div>
-          <div class="product-title">Салат «Оливье классика»</div>
-          <div class="product-weight">100 г</div>
-          <div class="product-footer">
-            <span class="product-price">230 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥕</div>
-          <div class="product-title">Салат морковный «Мандаринка»</div>
-          <div class="product-weight">90 г</div>
-          <div class="product-footer">
-            <span class="product-price">230 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥗</div>
-          <div class="product-title">Салат «Южный»</div>
-          <div class="product-weight">100 г</div>
-          <div class="product-footer">
-            <span class="product-price">300 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
+        <div class="product-card"><div class="product-image">🥗</div><div class="product-title">Тарталетка с крабовым</div><div class="product-weight">35 г</div><div class="product-footer"><span class="product-price">135 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥗</div><div class="product-title">Тарталетка «Нежность»</div><div class="product-weight">35 г</div><div class="product-footer"><span class="product-price">120 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥗</div><div class="product-title">Тарталетка с курицей</div><div class="product-weight">35 г</div><div class="product-footer"><span class="product-price">120 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥗</div><div class="product-title">Тарталетка «Анабарочка»</div><div class="product-weight">35 г</div><div class="product-footer"><span class="product-price">110 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥗</div><div class="product-title">Тарталетка «Цезарь»</div><div class="product-weight">35 г</div><div class="product-footer"><span class="product-price">135 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥗</div><div class="product-title">Салат «Нежность»</div><div class="product-weight">100 г</div><div class="product-footer"><span class="product-price">360 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥗</div><div class="product-title">Салат «Цезарь»</div><div class="product-weight">100 г</div><div class="product-footer"><span class="product-price">370 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥗</div><div class="product-title">Салат «Римский»</div><div class="product-weight">100 г</div><div class="product-footer"><span class="product-price">220 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥗</div><div class="product-title">Салат «Анабарочка»</div><div class="product-weight">100 г</div><div class="product-footer"><span class="product-price">250 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥗</div><div class="product-title">Крабовая классика</div><div class="product-weight">100 г</div><div class="product-footer"><span class="product-price">180 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥗</div><div class="product-title">Оливье классика</div><div class="product-weight">100 г</div><div class="product-footer"><span class="product-price">230 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥕</div><div class="product-title">Морковный «Мандаринка»</div><div class="product-weight">90 г</div><div class="product-footer"><span class="product-price">230 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥗</div><div class="product-title">Салат «Южный»</div><div class="product-weight">100 г</div><div class="product-footer"><span class="product-price">300 ₽</span><button class="add-to-cart">В корзину</button></div></div>
       </div>
     </div>
 
-    <!-- ГОРЯЧИЕ БЛЮДА -->
+    <!-- ===== ГОРЯЧИЕ БЛЮДА ===== -->
     <div class="menu-block" id="hot">
-      <h3>Горячие блюда</h3>
+      <h3>🍖 Горячие блюда</h3>
       <div class="scroll-controls">
         <button class="scroll-btn" onclick="scrollCategory('hotScroll', -320)">←</button>
         <button class="scroll-btn" onclick="scrollCategory('hotScroll', 320)">→</button>
       </div>
       <div class="horizontal-scroll" id="hotScroll">
-        <div class="product-card">
-          <div class="product-image">🍢</div>
-          <div class="product-title">Биф-шашлычки</div>
-          <div class="product-weight">60 г</div>
-          <div class="product-footer">
-            <span class="product-price">220 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🍢</div>
-          <div class="product-title">Чиккен-шашлычки</div>
-          <div class="product-weight">50 г</div>
-          <div class="product-footer">
-            <span class="product-price">165 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🐟</div>
-          <div class="product-title">Чир в кляре</div>
-          <div class="product-weight">75 г</div>
-          <div class="product-footer">
-            <span class="product-price">220 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥧</div>
-          <div class="product-title">Киш с курицей и грибами</div>
-          <div class="product-weight">50 г</div>
-          <div class="product-footer">
-            <span class="product-price">120 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥧</div>
-          <div class="product-title">Киш из рыбы</div>
-          <div class="product-weight">55 г</div>
-          <div class="product-footer">
-            <span class="product-price">140 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥙</div>
-          <div class="product-title">Люля-кебаб из говядины</div>
-          <div class="product-weight">60 г</div>
-          <div class="product-footer">
-            <span class="product-price">250 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
+        <div class="product-card"><div class="product-image">🍢</div><div class="product-title">Биф-шашлычки</div><div class="product-weight">60 г</div><div class="product-footer"><span class="product-price">220 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🍢</div><div class="product-title">Чиккен-шашлычки</div><div class="product-weight">50 г</div><div class="product-footer"><span class="product-price">165 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🐟</div><div class="product-title">Чир в кляре</div><div class="product-weight">75 г</div><div class="product-footer"><span class="product-price">220 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥧</div><div class="product-title">Киш с курицей и грибами</div><div class="product-weight">50 г</div><div class="product-footer"><span class="product-price">120 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥧</div><div class="product-title">Киш из рыбы</div><div class="product-weight">55 г</div><div class="product-footer"><span class="product-price">140 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥙</div><div class="product-title">Люля-кебаб из говядины</div><div class="product-weight">60 г</div><div class="product-footer"><span class="product-price">250 ₽</span><button class="add-to-cart">В корзину</button></div></div>
       </div>
     </div>
 
-    <!-- ВЫПЕЧКА -->
+    <!-- ===== ВЫПЕЧКА ===== -->
     <div class="menu-block" id="bakery">
-      <h3>Выпечка</h3>
+      <h3>🥖 Выпечка</h3>
       <div class="scroll-controls">
         <button class="scroll-btn" onclick="scrollCategory('bakeryScroll', -320)">←</button>
         <button class="scroll-btn" onclick="scrollCategory('bakeryScroll', 320)">→</button>
       </div>
       <div class="horizontal-scroll" id="bakeryScroll">
-        <div class="product-card">
-          <div class="product-image">🫓</div>
-          <div class="product-title">Лепешки якутские</div>
-          <div class="product-weight">50 г</div>
-          <div class="product-footer">
-            <span class="product-price">65 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥟</div>
-          <div class="product-title">Пирожки запеченные с мясом</div>
-          <div class="product-weight">50 г</div>
-          <div class="product-footer">
-            <span class="product-price">130 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥞</div>
-          <div class="product-title">Оладьи якутские</div>
-          <div class="product-weight">20 шт</div>
-          <div class="product-footer">
-            <span class="product-price">340 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥟</div>
-          <div class="product-title">Расстегай с рыбой</div>
-          <div class="product-weight">50 г</div>
-          <div class="product-footer">
-            <span class="product-price">130 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
+        <div class="product-card"><div class="product-image">🫓</div><div class="product-title">Лепешки якутские</div><div class="product-weight">50 г</div><div class="product-footer"><span class="product-price">65 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥟</div><div class="product-title">Пирожки с мясом</div><div class="product-weight">50 г</div><div class="product-footer"><span class="product-price">130 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥞</div><div class="product-title">Оладьи якутские</div><div class="product-weight">20 шт</div><div class="product-footer"><span class="product-price">340 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥟</div><div class="product-title">Расстегай с рыбой</div><div class="product-weight">50 г</div><div class="product-footer"><span class="product-price">130 ₽</span><button class="add-to-cart">В корзину</button></div></div>
       </div>
     </div>
 
-    <!-- НАРЕЗКИ -->
+    <!-- ===== НАРЕЗКИ ===== -->
     <div class="menu-block" id="cuts">
-      <h3>Нарезки</h3>
+      <h3>🥩 Нарезки</h3>
       <div class="scroll-controls">
         <button class="scroll-btn" onclick="scrollCategory('cutsScroll', -320)">←</button>
         <button class="scroll-btn" onclick="scrollCategory('cutsScroll', 320)">→</button>
       </div>
       <div class="horizontal-scroll" id="cutsScroll">
-        <div class="product-card">
-          <div class="product-image">🥩</div>
-          <div class="product-title">Нарезка мясная</div>
-          <div class="product-weight">170 г</div>
-          <div class="product-description">
-            Оленина, жеребятина, свинина, горчица, огурцы
-          </div>
-          <div class="product-footer">
-            <span class="product-price">800 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🐟</div>
-          <div class="product-title">Нарезка рыбная</div>
-          <div class="product-weight">200 г</div>
-          <div class="product-description">
-            Сёмга, чир, оливки, лимон, зелень
-          </div>
-          <div class="product-footer">
-            <span class="product-price">2100 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🐟</div>
-          <div class="product-title">Нарезка рыбная якутская</div>
-          <div class="product-weight">200 г</div>
-          <div class="product-description">
-            Омуль, оливки, лимон, лук, зелень
-          </div>
-          <div class="product-footer">
-            <span class="product-price">1200 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥗</div>
-          <div class="product-title">Нарезка овощная</div>
-          <div class="product-weight">150 г</div>
-          <div class="product-description">
-            Огурцы, помидоры, перец, лук, масло
-          </div>
-          <div class="product-footer">
-            <span class="product-price">450 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
+        <div class="product-card"><div class="product-image">🥩</div><div class="product-title">Мясная нарезка</div><div class="product-weight">170 г</div><div class="product-description">Оленина, жеребятина, свинина</div><div class="product-footer"><span class="product-price">800 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🐟</div><div class="product-title">Рыбная нарезка</div><div class="product-weight">200 г</div><div class="product-description">Сёмга, чир, оливки, лимон</div><div class="product-footer"><span class="product-price">2100 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🐟</div><div class="product-title">Рыбная якутская</div><div class="product-weight">200 г</div><div class="product-description">Омуль, оливки, лимон, лук</div><div class="product-footer"><span class="product-price">1200 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥗</div><div class="product-title">Овощная нарезка</div><div class="product-weight">150 г</div><div class="product-description">Огурцы, помидоры, перец</div><div class="product-footer"><span class="product-price">450 ₽</span><button class="add-to-cart">В корзину</button></div></div>
       </div>
     </div>
 
-    <!-- ДЕСЕРТЫ -->
+    <!-- ===== ДЕСЕРТЫ ===== -->
     <div class="menu-block" id="desserts">
-      <h3>Десерты</h3>
+      <h3>🍰 Десерты</h3>
       <div class="scroll-controls">
         <button class="scroll-btn" onclick="scrollCategory('dessertsScroll', -320)">←</button>
         <button class="scroll-btn" onclick="scrollCategory('dessertsScroll', 320)">→</button>
       </div>
       <div class="horizontal-scroll" id="dessertsScroll">
-        <div class="product-card">
-          <div class="product-image">🧁</div>
-          <div class="product-title">Классический капкейк</div>
-          <div class="product-weight">60 г</div>
-          <div class="product-footer">
-            <span class="product-price">190 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🧁</div>
-          <div class="product-title">Капкейк «Красный бархат»</div>
-          <div class="product-weight">60 г</div>
-          <div class="product-footer">
-            <span class="product-price">180 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🍰</div>
-          <div class="product-title">Трайфл «Красный бархат»</div>
-          <div class="product-weight">40 г</div>
-          <div class="product-footer">
-            <span class="product-price">120 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🍰</div>
-          <div class="product-title">Трайфл «Красный бархат» с ягодами</div>
-          <div class="product-weight">45 г</div>
-          <div class="product-footer">
-            <span class="product-price">170 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🍰</div>
-          <div class="product-title">Трайфл классический</div>
-          <div class="product-weight">40 г</div>
-          <div class="product-footer">
-            <span class="product-price">130 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🍰</div>
-          <div class="product-title">Трайфл классический с ягодами</div>
-          <div class="product-weight">45 г</div>
-          <div class="product-footer">
-            <span class="product-price">180 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🍪</div>
-          <div class="product-title">Фисташковая меренга с малиновым муссом</div>
-          <div class="product-weight">25 г</div>
-          <div class="product-footer">
-            <span class="product-price">130 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🍫</div>
-          <div class="product-title">Шоколадный брауни</div>
-          <div class="product-weight">45 г</div>
-          <div class="product-footer">
-            <span class="product-price">140 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥕</div>
-          <div class="product-title">Пирожное морковное с манговым компоте</div>
-          <div class="product-weight">45 г</div>
-          <div class="product-footer">
-            <span class="product-price">210 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🥯</div>
-          <div class="product-title">Профитроль с кремом и шоколадной глазурью</div>
-          <div class="product-weight">40 г</div>
-          <div class="product-footer">
-            <span class="product-price">180 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🍬</div>
-          <div class="product-title">Малиновая золотинка</div>
-          <div class="product-weight">35 г</div>
-          <div class="product-footer">
-            <span class="product-price">135 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🍡</div>
-          <div class="product-title">Фисташковый кейк поп</div>
-          <div class="product-weight">55 г</div>
-          <div class="product-footer">
-            <span class="product-price">170 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🍡</div>
-          <div class="product-title">Манговый кейк поп</div>
-          <div class="product-weight">55 г</div>
-          <div class="product-footer">
-            <span class="product-price">150 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🍡</div>
-          <div class="product-title">Брауни кейк поп с карамелью</div>
-          <div class="product-weight">55 г</div>
-          <div class="product-footer">
-            <span class="product-price">180 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🍡</div>
-          <div class="product-title">Малиновый кейк поп</div>
-          <div class="product-weight">55 г</div>
-          <div class="product-footer">
-            <span class="product-price">155 ₽</span>
-            <button class="add-to-cart">В корзину</button>
-          </div>
-        </div>
+        <div class="product-card"><div class="product-image">🧁</div><div class="product-title">Капкейк классический</div><div class="product-weight">60 г</div><div class="product-footer"><span class="product-price">190 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🧁</div><div class="product-title">Капкейк Красный бархат</div><div class="product-weight">60 г</div><div class="product-footer"><span class="product-price">180 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🍰</div><div class="product-title">Трайфл Красный бархат</div><div class="product-weight">40 г</div><div class="product-footer"><span class="product-price">120 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🍰</div><div class="product-title">Трайфл с ягодами</div><div class="product-weight">45 г</div><div class="product-footer"><span class="product-price">170 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🍰</div><div class="product-title">Трайфл классический</div><div class="product-weight">40 г</div><div class="product-footer"><span class="product-price">130 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🍪</div><div class="product-title">Фисташковая меренга</div><div class="product-weight">25 г</div><div class="product-footer"><span class="product-price">130 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🍫</div><div class="product-title">Шоколадный брауни</div><div class="product-weight">45 г</div><div class="product-footer"><span class="product-price">140 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥕</div><div class="product-title">Морковное с манго</div><div class="product-weight">45 г</div><div class="product-footer"><span class="product-price">210 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🥯</div><div class="product-title">Профитроль с глазурью</div><div class="product-weight">40 г</div><div class="product-footer"><span class="product-price">180 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🍬</div><div class="product-title">Малиновая золотинка</div><div class="product-weight">35 г</div><div class="product-footer"><span class="product-price">135 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🍡</div><div class="product-title">Фисташковый кейк-поп</div><div class="product-weight">55 г</div><div class="product-footer"><span class="product-price">170 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🍡</div><div class="product-title">Манговый кейк-поп</div><div class="product-weight">55 г</div><div class="product-footer"><span class="product-price">150 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🍡</div><div class="product-title">Брауни кейк-поп</div><div class="product-weight">55 г</div><div class="product-footer"><span class="product-price">180 ₽</span><button class="add-to-cart">В корзину</button></div></div>
+        <div class="product-card"><div class="product-image">🍡</div><div class="product-title">Малиновый кейк-поп</div><div class="product-weight">55 г</div><div class="product-footer"><span class="product-price">155 ₽</span><button class="add-to-cart">В корзину</button></div></div>
       </div>
     </div>
 
-    <!-- Информация о доставке -->
-    <div style="margin-top: 40px; padding: 20px; background: #f5f5f5; border-radius: 12px;">
-      <p style="margin-bottom: 10px;">📞 <strong>Телефон для оформления заказа:</strong> 700274; 89142700274</p>
-      <p style="color: #666;">✅ На самовывоз действует скидка -5% (район ДСК). Стоимость указана без учета доставки.</p>
-      <p style="color: #666; margin-top: 10px;">📋 Для подробного расчета фуршетов обратитесь к администратору</p>
+    <!-- ===== ИНФОРМАЦИЯ О ДОСТАВКЕ ===== -->
+    <div class="delivery-info">
+      <p>📞 <strong>Телефон для заказа:</strong> 700274 • 89142700274</p>
+      <p>✅ Самовывоз (район ДСК) — скидка 5%</p>
+      <p>🚚 Бесплатная доставка от 5000 ₽</p>
+      <p>📋 Для подробного расчета фуршетов обратитесь к администратору</p>
     </div>
   </section>
 </main>
 
-<!-- Корзина -->
+<!-- ===== МОДАЛКА КОРЗИНЫ ===== -->
 <div class="modal" id="cartModal">
   <div class="modal-content">
-    <h3>Корзина</h3>
-    <p>Товары будут здесь</p>
+    <h3>🛒 Корзина</h3>
+    <p>Ваши товары появятся здесь</p>
     <button class="close" id="closeCart">Закрыть</button>
   </div>
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>

@@ -133,6 +133,10 @@ p {
   transition: box-shadow 0.3s ease;
 }
 
+.product-card:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
 .product-image {
   width: 100%;
   height: 160px;
@@ -152,6 +156,11 @@ p {
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.product-image img:hover {
+  transform: scale(1.05);
 }
 
 .product-title {
@@ -272,6 +281,150 @@ p {
   color: #fff;
 }
 
+.scroll-btn:active {
+  transform: scale(0.95);
+}
+
+/* ========== ОГЛАВЛЕНИЕ ========== */
+.table-of-contents {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 30px 20px;
+  border-radius: 20px;
+  margin: 0 0 40px 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.toc-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #000;
+  position: relative;
+  display: inline-block;
+}
+
+.toc-title:after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #000;
+  border-radius: 2px;
+}
+
+.toc-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 25px;
+  max-width: 600px;
+}
+
+.toc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.toc-item {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px 15px;
+  text-decoration: none;
+  color: #000;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+}
+
+.toc-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  border-color: #000;
+}
+
+.toc-item.featured {
+  background: #000;
+  color: #fff;
+  grid-column: span 2;
+}
+
+.toc-item.featured .toc-icon {
+  background: #fff;
+  color: #000;
+}
+
+.toc-item.featured p,
+.toc-item.featured .toc-badge {
+  color: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.2);
+}
+
+.toc-item-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.toc-icon {
+  width: 40px;
+  height: 40px;
+  background: #000;
+  color: #fff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.toc-item h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.toc-item p {
+  font-size: 13px;
+  color: #666;
+  margin: 5px 0 10px;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+.toc-badge {
+  display: inline-block;
+  background: #f0f0f0;
+  color: #666;
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 30px;
+  align-self: flex-start;
+}
+
+.toc-footer {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px dashed #ddd;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px 25px;
+  font-size: 14px;
+  color: #666;
+}
+
+.toc-footer span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 /* ========== МОДАЛКА КОРЗИНЫ ========== */
 .modal {
   position: fixed;
@@ -297,6 +450,18 @@ p {
   max-width: 400px;
   border-radius: 12px;
   margin: 0 15px;
+  animation: modalAppear 0.3s ease;
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .modal-content h3 {
@@ -314,6 +479,11 @@ p {
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.close:hover {
+  background: #333;
 }
 
 /* ========== ЗАГЛУШКИ ========== */
@@ -340,6 +510,30 @@ p {
 .delivery-info p {
   margin-bottom: 8px;
   font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ========== АНИМАЦИИ ========== */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 /* ========== АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ ========== */
@@ -453,6 +647,45 @@ p {
   .delivery-info p {
     font-size: 13px;
   }
+
+  /* Адаптация оглавления */
+  .table-of-contents {
+    padding: 20px 15px;
+    margin: 0 0 30px 0;
+  }
+  
+  .toc-title {
+    font-size: 24px;
+  }
+  
+  .toc-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .toc-item.featured {
+    grid-column: span 1;
+  }
+  
+  .toc-item {
+    padding: 15px;
+  }
+  
+  .toc-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+  
+  .toc-item h3 {
+    font-size: 15px;
+  }
+  
+  .toc-footer {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 13px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -477,5 +710,37 @@ p {
   
   .add-to-cart {
     width: 100%;
+  }
+
+  /* Дополнительная адаптация для очень маленьких экранов */
+  .toc-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+  
+  .toc-item h3 {
+    font-size: 14px;
+  }
+  
+  .toc-item p {
+    font-size: 12px;
+  }
+  
+  .toc-badge {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+}
+
+/* ========== ПОДДЕРЖКА LANDSCAPE ОРИЕНТАЦИИ ========== */
+@media screen and (max-width: 900px) and (orientation: landscape) {
+  .horizontal-scroll .product-card {
+    min-width: 220px;
+    max-width: 220px;
+  }
+  
+  .toc-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
