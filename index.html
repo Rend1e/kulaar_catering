@@ -6,85 +6,212 @@
   <title>Кулаар Кейтеринг - Полный каталог</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* Дополнительные стили для горизонтального скролла */
-    .horizontal-scroll {
-      display: flex;
-      overflow-x: auto;
-      gap: 20px;
-      padding: 20px 0 30px;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: thin;
-      scrollbar-color: #000 #f0f0f0;
-    }
+   /* ========== СТИЛИ ДЛЯ ГОРИЗОНТАЛЬНОГО СКРОЛЛА ========== */
 
-    .horizontal-scroll::-webkit-scrollbar {
-      height: 8px;
-    }
+/* Контейнер с горизонтальным скроллом */
+.horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px 0 30px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
+  scrollbar-width: thin; /* Тонкий скроллбар для Firefox */
+  scrollbar-color: #000 #f0f0f0; /* Цвета для Firefox */
+}
 
-    .horizontal-scroll::-webkit-scrollbar-track {
-      background: #f0f0f0;
-      border-radius: 10px;
-    }
+/* Стилизация скроллбара для Chrome/Safari/Edge */
+.horizontal-scroll::-webkit-scrollbar {
+  height: 8px; /* Высота горизонтального скроллбара */
+}
 
-    .horizontal-scroll::-webkit-scrollbar-thumb {
-      background: #000;
-      border-radius: 10px;
-    }
+.horizontal-scroll::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Цвет трека */
+  border-radius: 10px;
+}
 
-    .horizontal-scroll .product-card {
-      min-width: 280px;
-      max-width: 280px;
-      flex-shrink: 0;
-    }
+.horizontal-scroll::-webkit-scrollbar-thumb {
+  background: #000; /* Цвет ползунка */
+  border-radius: 10px;
+}
 
-    .scroll-controls {
-      display: flex;
-      justify-content: flex-end;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
+.horizontal-scroll::-webkit-scrollbar-thumb:hover {
+  background: #333; /* Цвет при наведении */
+}
 
-    .scroll-btn {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: #fff;
-      border: 1px solid #ddd;
-      cursor: pointer;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-    }
+/* Карточки внутри горизонтального скролла */
+.horizontal-scroll .product-card {
+  min-width: 280px; /* Минимальная ширина */
+  max-width: 280px; /* Максимальная ширина */
+  flex-shrink: 0; /* Запрещаем сжатие */
+  transition: transform 0.2s ease;
+}
 
-    .scroll-btn:hover {
-      background: #000;
-      color: #fff;
-      border-color: #000;
-    }
+.horizontal-scroll .product-card:hover {
+  transform: translateY(-5px); /* Легкий подъем при наведении */
+}
 
-    .category-badge {
-      background: #f0f0f0;
-      color: #666;
-      font-size: 12px;
-      padding: 4px 8px;
-      border-radius: 20px;
-      margin-bottom: 10px;
-      display: inline-block;
-    }
+/* ========== ЭЛЕМЕНТЫ КАРТОЧКИ ТОВАРА ========== */
 
-    .product-weight {
-      font-size: 14px;
-      color: #999;
-      margin-bottom: 8px;
-    }
-    
-    .menu-categories .active {
-      background: #000;
-      color: #fff;
-    }
+/* Контейнер для изображения */
+.product-image {
+  width: 100%;
+  height: 160px;
+  background: #f0f0f0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 16px;
+  overflow: hidden; /* Обрезаем выходящее за пределы */
+  position: relative; /* Для возможных доп. эффектов */
+}
+
+/* Само изображение */
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Заполняет контейнер, обрезая лишнее */
+  border-radius: 8px;
+  transition: transform 0.3s ease; /* Плавное увеличение при наведении */
+}
+
+.product-image img:hover {
+  transform: scale(1.05); /* Легкое увеличение при наведении */
+}
+
+/* Бейдж категории */
+.category-badge {
+  background: #f0f0f0;
+  color: #666;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  display: inline-block;
+  align-self: flex-start; /* Выравнивание по левому краю */
+  letter-spacing: 0.3px;
+}
+
+/* Вес товара */
+.product-weight {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 8px;
+  font-weight: 400;
+}
+
+/* Активная категория в меню */
+.menu-categories .active {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+/* ========== КНОПКИ УПРАВЛЕНИЯ СКРОЛЛОМ ========== */
+
+/* Контейнер для кнопок */
+.scroll-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* Кнопки прокрутки */
+.scroll-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.scroll-btn:hover {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.scroll-btn:active {
+  transform: scale(0.95); /* Эффект нажатия */
+}
+
+/* ========== АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ ========== */
+
+@media screen and (max-width: 768px) {
+  /* Уменьшаем карточки */
+  .horizontal-scroll .product-card {
+    min-width: 220px;
+    max-width: 220px;
+  }
+  
+  /* Уменьшаем изображения */
+  .product-image {
+    height: 130px;
+    margin-bottom: 12px;
+  }
+  
+  /* Уменьшаем отступы */
+  .horizontal-scroll {
+    gap: 15px;
+    padding: 15px 0 25px;
+  }
+  
+  /* Уменьшаем бейдж */
+  .category-badge {
+    font-size: 11px;
+    padding: 3px 8px;
+    margin-bottom: 8px;
+  }
+  
+  /* Уменьшаем вес */
+  .product-weight {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+  
+  /* Скрываем кнопки скролла на мобильных */
+  .scroll-controls {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Еще меньше для очень маленьких экранов */
+  .horizontal-scroll .product-card {
+    min-width: 180px;
+    max-width: 180px;
+  }
+  
+  .product-image {
+    height: 110px;
+  }
+  
+  .product-image img {
+    object-fit: cover;
+  }
+  
+  .category-badge {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+  
+  .product-weight {
+    font-size: 12px;
+  }
+}
   </style>
 </head>
 <body>
@@ -265,7 +392,7 @@
 
         <!-- ТАПТАЛ-МАХТАЛ -->
         <div class="product-card">
-          <div class="product-image">🎁</div>
+          <div class="product-image"><img src="img/taptal-mahtal.jpg" alt=""></div>
           <span class="category-badge">Подарочный • 12 шт</span>
           <div class="product-title">Таптал-Махтал</div>
           <div class="product-weight">600 г / 2400 ₽</div>
@@ -1121,80 +1248,421 @@
 </div>
 
 <script>
-  // Функция для скролла категорий
-  function scrollCategory(elementId, offset) {
-    const container = document.getElementById(elementId);
-    if (container) {
-      container.scrollBy({ left: offset, behavior: 'smooth' });
-    }
-  }
+ // ========== УТИЛИТЫ ==========
 
-  // Анимация появления блоков
-  const observer = new IntersectionObserver(entries => {
+/**
+ * Плавный скролл к элементу
+ * @param {string} elementId - ID элемента
+ * @param {number} offset - смещение в пикселях
+ */
+function scrollCategory(elementId, offset) {
+  const container = document.getElementById(elementId);
+  if (!container) return;
+  
+  container.scrollBy({
+    left: offset,
+    behavior: 'smooth'
+  });
+}
+
+// ========== АНИМАЦИЯ ПОЯВЛЕНИЯ ==========
+
+/**
+ * Настройка Intersection Observer для анимации секций
+ */
+function initScrollAnimation() {
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
       }
     });
-  }, { threshold: 0.2 });
-
-  document.querySelectorAll('section').forEach(sec => observer.observe(sec));
-
-  // Корзина
-  const cartModal = document.getElementById('cartModal');
-  const openCartBtn = document.getElementById('openCart');
-  const closeCartBtn = document.getElementById('closeCart');
-
-  if (openCartBtn) {
-    openCartBtn.onclick = () => cartModal.classList.add('active');
-  }
-
-  if (closeCartBtn) {
-    closeCartBtn.onclick = () => cartModal.classList.remove('active');
-  }
-
-  // Закрытие модалки по клику на фон
-  if (cartModal) {
-    cartModal.onclick = (e) => {
-      if (e.target === cartModal) {
-        cartModal.classList.remove('active');
-      }
-    };
-  }
-
-  // Обработчики для кнопок "В корзину"
-  document.querySelectorAll('.add-to-cart').forEach(button => {
-    button.onclick = (e) => {
-      e.stopPropagation();
-      const card = e.target.closest('.product-card');
-      const title = card.querySelector('.product-title').textContent;
-      const price = card.querySelector('.product-price').textContent;
-      
-      alert(`✅ "${title}" добавлен в корзину!\nЦена: ${price}`);
-      // Здесь будет логика добавления в корзину
-    };
+  }, {
+    threshold: 0.2,
+    rootMargin: '0px'
   });
 
-  // Подсветка активной категории при скролле
-  window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('.menu-block');
-    const navLinks = document.querySelectorAll('.menu-categories a');
+  document.querySelectorAll('section').forEach(section => {
+    observer.observe(section);
+  });
+}
+
+// ========== РАБОТА С КОРЗИНОЙ ==========
+
+class CartManager {
+  constructor() {
+    this.modal = document.getElementById('cartModal');
+    this.openBtn = document.getElementById('openCart');
+    this.closeBtn = document.getElementById('closeCart');
+    this.cartItems = [];
     
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 150;
-      if (pageYOffset >= sectionTop) {
-        current = section.getAttribute('id');
+    this.init();
+  }
+  
+  /**
+   * Инициализация обработчиков событий
+   */
+  init() {
+    this.initModalHandlers();
+    this.initAddToCartButtons();
+  }
+  
+  /**
+   * Обработчики для модального окна
+   */
+  initModalHandlers() {
+    if (!this.modal) return;
+    
+    // Открытие модалки
+    if (this.openBtn) {
+      this.openBtn.addEventListener('click', () => this.openModal());
+    }
+    
+    // Закрытие по кнопке
+    if (this.closeBtn) {
+      this.closeBtn.addEventListener('click', () => this.closeModal());
+    }
+    
+    // Закрытие по клику на фон
+    this.modal.addEventListener('click', (e) => {
+      if (e.target === this.modal) {
+        this.closeModal();
       }
     });
+    
+    // Закрытие по Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.modal.classList.contains('active')) {
+        this.closeModal();
+      }
+    });
+  }
+  
+  /**
+   * Открыть модальное окно
+   */
+  openModal() {
+    this.modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Блокируем скролл страницы
+  }
+  
+  /**
+   * Закрыть модальное окно
+   */
+  closeModal() {
+    this.modal.classList.remove('active');
+    document.body.style.overflow = ''; // Возвращаем скролл
+  }
+  
+  /**
+   * Добавление товара в корзину
+   * @param {HTMLElement} card - карточка товара
+   */
+  addToCart(card) {
+    const product = {
+      id: Date.now() + Math.random(), // Временный ID
+      title: card.querySelector('.product-title')?.textContent || 'Без названия',
+      price: card.querySelector('.product-price')?.textContent || '0 ₽',
+      weight: card.querySelector('.product-weight')?.textContent || '',
+      image: card.querySelector('.product-image img')?.src || '',
+      quantity: 1
+    };
+    
+    this.cartItems.push(product);
+    this.showNotification(`✅ "${product.title}" добавлен в корзину!`);
+    this.updateCartCounter();
+  }
+  
+  /**
+   * Показать уведомление
+   * @param {string} message - текст уведомления
+   */
+  showNotification(message) {
+    // Создаем уведомление
+    const notification = document.createElement('div');
+    notification.textContent = message;
+    notification.style.cssText = `
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #000;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 14px;
+      z-index: 3000;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      animation: slideUp 0.3s ease;
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Удаляем через 2.5 секунды
+    setTimeout(() => {
+      notification.style.animation = 'fadeOut 0.3s ease';
+      setTimeout(() => notification.remove(), 300);
+    }, 2500);
+  }
+  
+  /**
+   * Обновить счетчик товаров в корзине
+   */
+  updateCartCounter() {
+    const cartButton = document.getElementById('openCart');
+    if (!cartButton) return;
+    
+    const count = this.cartItems.length;
+    
+    // Если есть счетчик, обновляем его, если нет - создаем
+    let counter = cartButton.querySelector('.cart-counter');
+    
+    if (count > 0) {
+      if (!counter) {
+        counter = document.createElement('span');
+        counter.className = 'cart-counter';
+        counter.style.cssText = `
+          background: red;
+          color: white;
+          border-radius: 50%;
+          padding: 2px 6px;
+          font-size: 11px;
+          margin-left: 5px;
+        `;
+        cartButton.appendChild(counter);
+      }
+      counter.textContent = count;
+    } else if (counter) {
+      counter.remove();
+    }
+  }
+  
+  /**
+   * Инициализация кнопок "В корзину"
+   */
+  initAddToCartButtons() {
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const card = e.target.closest('.product-card');
+        if (!card) return;
+        
+        this.addToCart(card);
+      });
+    });
+  }
+}
 
-    navLinks.forEach(link => {
+// ========== НАВИГАЦИЯ И ПОДСВЕТКА ==========
+
+class NavigationManager {
+  constructor() {
+    this.sections = document.querySelectorAll('.menu-block');
+    this.navLinks = document.querySelectorAll('.menu-categories a');
+    this.currentSection = '';
+    
+    this.init();
+  }
+  
+  init() {
+    this.initScrollSpy();
+    this.initSmoothScroll();
+  }
+  
+  /**
+   * Отслеживание активной секции при скролле
+   */
+  initScrollSpy() {
+    window.addEventListener('scroll', () => {
+      this.updateActiveSection();
+    }, { passive: true });
+  }
+  
+  /**
+   * Обновление активной секции
+   */
+  updateActiveSection() {
+    const scrollPosition = window.scrollY + 150; // Смещение для учета хедера
+    
+    this.sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionBottom = sectionTop + section.offsetHeight;
+      
+      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+        const currentId = section.getAttribute('id');
+        if (this.currentSection !== currentId) {
+          this.currentSection = currentId;
+          this.highlightActiveLink(currentId);
+        }
+      }
+    });
+  }
+  
+  /**
+   * Подсветка активной ссылки в меню
+   * @param {string} sectionId - ID активной секции
+   */
+  highlightActiveLink(sectionId) {
+    this.navLinks.forEach(link => {
       link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
+      
+      const href = link.getAttribute('href');
+      if (href === `#${sectionId}`) {
         link.classList.add('active');
       }
     });
-  });
+  }
+  
+  /**
+   * Плавный скролл к секции при клике
+   */
+  initSmoothScroll() {
+    this.navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        const targetId = link.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+        
+        const targetSection = document.querySelector(targetId);
+        if (!targetSection) return;
+        
+        targetSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      });
+    });
+  }
+}
+
+// ========== МОБИЛЬНЫЕ УЛУЧШЕНИЯ ==========
+
+/**
+ * Улучшения для мобильных устройств
+ */
+function initMobileEnhancements() {
+  const isMobile = window.innerWidth <= 768;
+  
+  if (isMobile) {
+    // Добавляем поддержку свайпа для горизонтального скролла
+    const scrollContainers = document.querySelectorAll('.horizontal-scroll');
+    
+    scrollContainers.forEach(container => {
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+      
+      container.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - container.offsetLeft;
+        scrollLeft = container.scrollLeft;
+      });
+      
+      container.addEventListener('mouseleave', () => {
+        isDown = false;
+      });
+      
+      container.addEventListener('mouseup', () => {
+        isDown = false;
+      });
+      
+      container.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - container.offsetLeft;
+        const walk = (x - startX) * 2;
+        container.scrollLeft = scrollLeft - walk;
+      });
+      
+      // Для touch-устройств
+      container.addEventListener('touchstart', (e) => {
+        isDown = true;
+        startX = e.touches[0].pageX - container.offsetLeft;
+        scrollLeft = container.scrollLeft;
+      });
+      
+      container.addEventListener('touchend', () => {
+        isDown = false;
+      });
+      
+      container.addEventListener('touchmove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.touches[0].pageX - container.offsetLeft;
+        const walk = (x - startX) * 2;
+        container.scrollLeft = scrollLeft - walk;
+      });
+    });
+  }
+}
+
+// ========== ДОБАВЛЕНИЕ CSS-АНИМАЦИЙ ==========
+
+/**
+ * Добавление глобальных CSS-анимаций
+ */
+function addGlobalAnimations() {
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+    }
+    
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+}
+
+// ========== ИНИЦИАЛИЗАЦИЯ ПРИ ЗАГРУЗКЕ ==========
+
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('Кулаар Кейтеринг: инициализация...');
+  
+  // Добавляем анимации
+  addGlobalAnimations();
+  
+  // Инициализируем анимацию появления
+  initScrollAnimation();
+  
+  // Инициализируем корзину
+  const cart = new CartManager();
+  
+  // Инициализируем навигацию
+  const navigation = new NavigationManager();
+  
+  // Мобильные улучшения
+  initMobileEnhancements();
+  
+  console.log('Кулаар Кейтеринг: готов к работе!');
+});
+
+// ========== ОБРАБОТКА ИЗМЕНЕНИЯ РАЗМЕРА ОКНА ==========
+
+let resizeTimeout;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    // Обновляем мобильные улучшения при изменении размера
+    initMobileEnhancements();
+  }, 250);
+});
 </script>
 
 </body>
